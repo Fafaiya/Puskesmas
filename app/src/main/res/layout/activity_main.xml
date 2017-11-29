@@ -25,12 +25,13 @@
         <TextView
             android:id="@+id/tv_daftar"
             android:text="@string/daftar"
-            android:textSize="15sp"
+            android:textSize="20sp"
             android:textColor="#FFFFFF"
             android:background="#02800d"
-            android:paddingLeft="15dp"
+            android:padding="8dp"
             android:textStyle="bold"
             android:layout_gravity="bottom"
+            android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
