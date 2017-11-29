@@ -11,6 +11,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 import org.sandec.klinik.puskesmas.R;
+import org.sandec.klinik.puskesmas.fragment.HomeFragment;
 import org.sandec.klinik.puskesmas.fragment.PoliFragment;
 
 public class MainActivity extends AppCompatActivity
@@ -36,7 +37,7 @@ public class MainActivity extends AppCompatActivity
 
         FragmentManager manager = getSupportFragmentManager();
         manager.beginTransaction()
-                .replace(R.id.layout_untuk_fragment,new PoliFragment())
+                .replace(R.id.layout_untuk_fragment,new HomeFragment())
                 .commit();
     }
 
@@ -83,6 +84,12 @@ public class MainActivity extends AppCompatActivity
             manager.beginTransaction()
                    .replace(R.id.layout_untuk_fragment,new PoliFragment())
                    .commit();
+        }else if (id == R.id.nav_home){
+            FragmentManager manager = getSupportFragmentManager();
+            manager.beginTransaction()
+                    .replace(R.id.layout_untuk_fragment,new HomeFragment())
+                    .commit();
+
         }
             // Handle the camera action
 //        } else if (id == R.id.nav_gallery) {
