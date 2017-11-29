@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single" >
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home"
+            android:title="@string/home" />
+        <item
+            android:id="@+id/nav_profile"
+            android:icon="@drawable/ic_profile"
+            android:title="@string/profile" />
+        <item
+            android:id="@+id/nav_riwayat_pendaftaran"
+            android:icon="@drawable/ic_pendaftaran"
+            android:title="@string/riwayat_pendaftaran" />
+        <item
+            android:id="@+id/nav_daftar_poli"
+            android:icon="@drawable/ic_poli"
+            android:title="Daftar Poli" />
+        <item
+            android:id="@+id/nav_staf"
+            android:icon="@drawable/ic_staf"
+            android:title="@string/jajaran_staf" />
+        <item
+            android:id="@+id/nav_lokasi"
+            android:icon="@drawable/ic_lokasi"
+            android:title="Lokasi Puskesmas" />
+        <item
+            android:id="@+id/nav_phone"
+            android:icon="@drawable/ic_phone"
+            android:title="(0274) 498044" />
+
+    </group>
+
+    <!--<item android:title="Communicate">-->
+        <!--<menu>-->
+            <!--<item-->
+                <!--android:id="@+id/nav_share"-->
+                <!--android:icon="@drawable/ic_menu_share"-->
+                <!--android:title="Share" />-->
+            <!--<item-->
+                <!--android:id="@+id/nav_send"-->
+                <!--android:icon="@drawable/ic_menu_send"-->
+                <!--android:title="Send" />-->
+        <!--</menu>-->
+    <!--</item>-->
+
+</menu>
