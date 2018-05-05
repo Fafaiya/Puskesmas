@@ -1,5 +1,7 @@
 package org.sandec.klinik.puskesmas.activities;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentManager;
@@ -8,14 +10,19 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 
 import org.sandec.klinik.puskesmas.R;
+import org.sandec.klinik.puskesmas.fragment.HistoryFragment;
 import org.sandec.klinik.puskesmas.fragment.HomeFragment;
 import org.sandec.klinik.puskesmas.fragment.PoliFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+TextView tvDaftar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +30,8 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+
 
 
 
@@ -39,7 +48,34 @@ public class MainActivity extends AppCompatActivity
         manager.beginTransaction()
                 .replace(R.id.layout_untuk_fragment,new HomeFragment())
                 .commit();
+
+
+//        SharedPreferences sp = getSharedPreferences(Konstanta.FIREBASE,MODE_PRIVATE);
+//        String idToken = sp.getString(Konstanta.TOKEN_FIREBASE,"");
+//
+//        Log.d("data", "onCreate: "+idToken);
     }
+
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        //Bundle b = new Bundle();
+        Bundle b = getIntent().getExtras();
+
+        if (b != null) {
+            if(b.getString("coba").equals("poli")){
+                FragmentManager manager = getSupportFragmentManager();
+                manager.beginTransaction()
+                        .replace(R.id.layout_untuk_fragment,new PoliFragment())
+                        .commit();
+
+            }
+
+        }
+    }
+
+
 
     @Override
     public void onBackPressed() {
@@ -73,6 +109,10 @@ public class MainActivity extends AppCompatActivity
 //        return super.onOptionsItemSelected(item);
 //    }
 
+
+
+
+
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
@@ -90,7 +130,13 @@ public class MainActivity extends AppCompatActivity
                     .replace(R.id.layout_untuk_fragment,new HomeFragment())
                     .commit();
 
+        }else if(id == R.id.nav_riwayat_pendaftaran){
+            FragmentManager manager = getSupportFragmentManager();
+            manager.beginTransaction()
+                    .replace(R.id.layout_untuk_fragment,new HistoryFragment())
+                    .commit();
         }
+
             // Handle the camera action
 //        } else if (id == R.id.nav_gallery) {
 //
@@ -108,4 +154,8 @@ public class MainActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+//    public void daftarNik(View view) {
+//        startActivity(new Intent(MainActivity.this,PendaftaranPuskesmas2Activity.class));
+//    }
 }

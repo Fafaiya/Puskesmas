@@ -3,31 +3,34 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:gravity="center"
-    android:layout_margin="10dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content">
 
     <ImageView
         android:id="@+id/iv_poli"
-        android:layout_width="match_parent"
+        android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginBottom="8dp"
-        android:src="@drawable/gigi"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        android:src="@drawable/gigi"/>
 
     <TextView
         android:id="@+id/tv_poli"
+        android:gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 android:textStyle="bold"
-        android:layout_marginBottom="16dp"
-        android:text="@string/nama_poli"
-        app:layout_constraintBottom_toBottomOf="@+id/iv_poli"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:text="@string/nama_poli"/>
+    <TextView
+        android:id="@+id/tv_poli_nama_dokter"
+        android:gravity="center"
+        android:textSize="7sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="nama dokter"/>
 
 </LinearLayout>

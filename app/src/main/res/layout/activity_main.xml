@@ -22,18 +22,19 @@
         app:headerLayout="@layout/nav_header_main"
         app:menu="@menu/activity_main_drawer" >
 
-        <TextView
-            android:id="@+id/tv_daftar"
-            android:text="@string/daftar"
-            android:textSize="20sp"
-            android:textColor="#FFFFFF"
-            android:background="#02800d"
-            android:padding="8dp"
-            android:textStyle="bold"
-            android:layout_gravity="bottom"
-            android:gravity="center"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+        <!--<TextView-->
+            <!--android:id="@+id/tv_daftar"-->
+            <!--android:text="@string/daftar"-->
+            <!--android:onClick="daftarNik"-->
+            <!--android:textSize="20sp"-->
+            <!--android:textColor="#FFFFFF"-->
+            <!--android:background="#02800d"-->
+            <!--android:padding="8dp"-->
+            <!--android:textStyle="bold"-->
+            <!--android:layout_gravity="bottom"-->
+            <!--android:gravity="center"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content" />-->
 
     </android.support.design.widget.NavigationView>
 

@@ -2,19 +2,18 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="org.sandec.klinik.puskesmas">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_logo_puskesmas_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
             android:name=".activities.MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme">
-
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activities.SplashActivity"
             android:theme="@style/AppTheme.NoActionBar">
@@ -23,8 +22,31 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
+        <activity android:name=".activities.PoliGigiActivity" />
+        <activity android:name=".activities.PendaftaranActivity"
+            android:taskAffinity=""/>
+        <activity android:name=".activities.LoginActivity" />
+        <activity android:name=".activities.PendaftaranBerhasilActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".activities.PendaftaranPuskesmasActivity" />
+        <activity android:name=".activities.ValidasiPendaftaranActivity" />
+
+        <service android:name=".helper.GetIdFirebase">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+
+        <service android:name=".helper.MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+
+        <activity android:name=".activities.PendaftaranPuskesmas2Activity" />
+        <activity android:name=".activities.PendaftaranPoliActivity"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
